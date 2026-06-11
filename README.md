@@ -50,7 +50,7 @@ Load the credentials:
 Confirm they're applied:
 `aws configure list`
 
-**Create and configure the server**
+**Provision the Infrastructure**
 ```
 terraform init
 terraform apply
