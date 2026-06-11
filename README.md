@@ -60,7 +60,7 @@ terraform apply
 **Configure the server** \
 `ansible-playbook -i hosts.ini playbook.yml` \
 If you encounter a "worker was found in a dead state" error, set this first: \
-`export OBJC_DISABLE_INITIALIZE_FORK_SAFEATY=YES`
+`export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES`
 
 **Verify the server is running** \
 Scan the Minecraft port: \
