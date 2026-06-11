@@ -37,7 +37,7 @@ git clone https://github.com/AtticusMcNulty/Automated-Minecraft-Server.git
 cd Automated-Minecraft-Server
 ```
 
-**Setup AWS credentials:**
+**Setup AWS credentials:** \
 Create .env file and fill in the following with your own credentials:
 ```
 export AWS_ACCESS_KEY_ID=your_access_key_id
@@ -45,9 +45,9 @@ export AWS_SECRET_ACCESS_KEY=your_secret_access_key
 export AWS_SESSION_TOKEN=your_session_token
 export AWS_DEFAULT_REGION=your_preferred_region
 ```
-Load the credentials:
+Load the credentials: \
 `source .env`
-Confirm they're applied:
+Confirm they're applied: \
 `aws configure list`
 
 **Provision the Infrastructure**
@@ -56,12 +56,12 @@ terraform init
 terraform apply
 ```
 
-**Configure the server**
+**Configure the server** \
 `ansible-playbook -i hosts.ini playbook.yml`
 If you encounter a "worker was found in a dead state" error, set this first:
 `export OBJC_DISABLE_INITIALIZE_FORK_SAFEATY=YES
 
-**Verify the server is running**
+**Verify the server is running** \
 Scan the Minecraft port:
 `nmap -sV -Pn -p T:25565 <ec2_instance_public_ip>`
 Output should be similar to the following:
@@ -70,10 +70,10 @@ PORT      STATE SERVICE   VERSION
 25565/tcp open  minecraft Minecraft 1.21.5 (Protocol: 127, Message: A Minecraft Server, Users: 0/20)
 ```
 
-**Connecting via Minecraft client**
+**Connecting via Minecraft client** \
 Open Minecraft Java Edition. Select Multiplayer, Add Server, then enter the ec2 instance's public IP as the server address. Join and play!
 
-**Wrap Up**
+**Wrap Up** \
 When you're done playing, remove all AWS resources to avoid additional charges:
 `terraform destroy`
 
