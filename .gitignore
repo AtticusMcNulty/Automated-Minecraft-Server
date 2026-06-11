@@ -1,0 +1,6 @@
+.env
+hosts.ini
+terraform.tfstate
+terraform.tfstate.backup
+.terraform/
+*.pkg
