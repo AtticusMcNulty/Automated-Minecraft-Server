@@ -1,5 +1,6 @@
 # Minecraft Server on AWS
 
+## Background
 This repo automates configuration of a Minecraft server on AWS entirely through code. The two pimary tools used to accomplish this are Terraform and Ansible. Terraform handles setting up the EC2 instance, while Ansible configures Minecraft to actually run on the server with AWS Systems Manager (SSM).
 
 ## Requirements
