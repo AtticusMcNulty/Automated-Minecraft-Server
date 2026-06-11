@@ -46,7 +46,7 @@ export AWS_SESSION_TOKEN=your_session_token
 export AWS_DEFAULT_REGION=your_preferred_region
 ```
 Load the credentials: \
-`source .env`
+`source .env` \
 Confirm they're applied: \
 `aws configure list`
 
@@ -57,13 +57,13 @@ terraform apply
 ```
 
 **Configure the server** \
-`ansible-playbook -i hosts.ini playbook.yml`
-If you encounter a "worker was found in a dead state" error, set this first:
-`export OBJC_DISABLE_INITIALIZE_FORK_SAFEATY=YES
+`ansible-playbook -i hosts.ini playbook.yml` \
+If you encounter a "worker was found in a dead state" error, set this first: \
+`export OBJC_DISABLE_INITIALIZE_FORK_SAFEATY=YES`
 
 **Verify the server is running** \
-Scan the Minecraft port:
-`nmap -sV -Pn -p T:25565 <ec2_instance_public_ip>`
+Scan the Minecraft port: \
+`nmap -sV -Pn -p T:25565 <ec2_instance_public_ip>` \
 Output should be similar to the following:
 ```
 PORT      STATE SERVICE   VERSION
@@ -74,7 +74,7 @@ PORT      STATE SERVICE   VERSION
 Open Minecraft Java Edition. Select Multiplayer, Add Server, then enter the ec2 instance's public IP as the server address. Join and play!
 
 **Wrap Up** \
-When you're done playing, remove all AWS resources to avoid additional charges:
+When you're done playing, remove all AWS resources to avoid additional charges: \
 `terraform destroy`
 
 ## Resources
